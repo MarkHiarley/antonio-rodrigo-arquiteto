@@ -30,19 +30,22 @@ const DESCRICAO =
   "Arquiteto Antonio Rodrigo, em Tianguá – CE. Projetos residenciais, comerciais e corporativos, reformas, design de interiores e acompanhamento de obra.";
 
 /**
- * A base das URLs absolutas (Open Graph). Sem domínio próprio ainda, então:
- * NEXT_PUBLIC_SITE_URL quando o domínio existir, senão o domínio de produção
- * estável da Vercel, e só em último caso a URL deste deployment específico —
- * que muda a cada deploy e derrubaria a imagem do preview já em cache. Sem
- * nenhuma delas a chave fica de fora: nunca um domínio inventado.
+ * A base das URLs absolutas (Open Graph). O preview de link do WhatsApp exige
+ * URL absoluta, entao num site estatico isso PRECISA estar certo no momento do
+ * build — depois nao ha servidor para corrigir. Ordem: o dominio proprio, o
+ * dominio de producao da Vercel, a URL do Cloudflare Pages, e por ultimo a URL
+ * do deployment especifico. Sem nenhuma delas a chave fica de fora: nunca um
+ * dominio inventado.
  */
 const urlBase =
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : undefined);
+    : process.env.CF_PAGES_URL
+      ? process.env.CF_PAGES_URL
+      : process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : undefined);
 
 export const metadata: Metadata = {
   ...(urlBase ? { metadataBase: new URL(urlBase) } : {}),

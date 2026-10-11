@@ -14,13 +14,54 @@ npm start -- --port 3000
 
 ## Deploy
 
-Vercel. Nada de backend: os CTAs abrem `wa.me` e `tel:`, então o site é
-inteiramente estático.
+Nada de backend: os CTAs abrem `wa.me` e `tel:`, e o site é inteiramente estático.
+Isso dá dois caminhos.
 
-Quando o domínio próprio existir, defina `NEXT_PUBLIC_SITE_URL` (por exemplo
-`https://arquitetoantoniorodrigo.com.br`) para o `metadataBase` e as imagens de
-Open Graph passarem a apontar para o endereço certo. Na Vercel a variável
-`VERCEL_URL` já resolve isso nos deploys de preview.
+### Cloudflare Pages — recomendado
+
+O plano gratuito do Cloudflare Pages **permite uso comercial**, ao contrário do Hobby da
+Vercel. E como o site é estático, não precisa de adaptador nenhum: o `next-on-pages`
+está descontinuado e o adaptador OpenNext só é necessário para app com servidor.
+
+```bash
+# 1. gera o site estático em out/
+NEXT_PUBLIC_SITE_URL=https://seudominio.com.br npm run build:static
+
+# 2. publica (o primeiro comando abre o navegador para login)
+npx wrangler pages deploy out --project-name antonio-rodrigo-arquiteto
+```
+
+Ou conecte o repositório no painel do Pages:
+
+| Configuração | Valor |
+| --- | --- |
+| Build command | `npm run build:static` |
+| Output directory | `out` |
+| Variável de ambiente | `NEXT_PUBLIC_SITE_URL` = o domínio final |
+
+O `NEXT_PUBLIC_SITE_URL` **precisa** existir no momento do build. Num site estático não
+há servidor depois para corrigir a URL absoluta, e sem ele a `og:image` sai apontando
+para `localhost` — o que quebra o preview do link no WhatsApp. Se você não definir nada,
+o Cloudflare injeta `CF_PAGES_URL` (a URL `*.pages.dev`) e o preview ao menos funciona
+no domínio provisório.
+
+### Vercel
+
+Funciona, com uma ressalva: as [Fair Use
+Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) do plano **Hobby**
+restringem o uso a projetos pessoais não comerciais. Site de cliente exige **Pro**
+(US$ 20/mês ≈ R$ 110). Para uma landing page estática, o Cloudflare Pages entrega o
+mesmo resultado por R$ 0.
+
+```bash
+vercel deploy --prod -y --scope <time>
+```
+
+### Sobre o domínio
+
+Em qualquer um dos dois: registre o domínio **no nome do cliente** e aponte o DNS para o
+serviço de hospedagem. A Vercel e o Cloudflare ganham o domínio próprio por CNAME ou
+pelos nameservers, sem custo adicional.
 
 ## Estrutura
 
