@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-11T00:00:00-03:00",
+  "title": "Design System: Antonio Rodrigo | Arquiteto",
+  "extensions": {
+    "colorMeta": {
+      "ceu-1": {
+        "role": "primary",
+        "displayName": "Azul de Hora Azul Profundo",
+        "canonical": "oklch(39.6% 0.0779 246.3)",
+        "tonalRamp": ["#000103", "#00050e", "#020f24", "#0b2142", "#1a3e6d", "#3467a7", "#599ff3", "#c1dffe"]
+      },
+      "ceu-2": {
+        "role": "primary",
+        "displayName": "Azul Meio",
+        "canonical": "oklch(52.2% 0.0992 243.4)",
+        "tonalRamp": ["#000102", "#00050e", "#001028", "#05224d", "#113f7c", "#2669bb", "#4fa1fe", "#bfe0ff"]
+      },
+      "ceu-3": {
+        "role": "primary",
+        "displayName": "Azul Claro",
+        "canonical": "oklch(64.2% 0.0849 242.0)",
+        "tonalRamp": ["#000102", "#00050d", "#011025", "#072244", "#153f70", "#2d69ab", "#50a2f9", "#bee1ff"]
+      },
+      "neblina": {
+        "role": "primary",
+        "displayName": "Neblina",
+        "canonical": "oklch(84.3% 0.0336 241.1)",
+        "tonalRamp": ["#000102", "#020509", "#080f16", "#15212c", "#2a3c4d", "#4a647b", "#789bb9", "#bde1ff"]
+      },
+      "serra": {
+        "role": "secondary",
+        "displayName": "Verde Serra",
+        "canonical": "oklch(45.8% 0.0761 140.8)",
+        "tonalRamp": ["#000100", "#010700", "#061204", "#11260e", "#244520", "#42713b", "#6dac63", "#a7f89a"]
+      },
+      "serra-claro": {
+        "role": "secondary",
+        "displayName": "Verde Serra Claro",
+        "canonical": "oklch(61.3% 0.0786 135.6)",
+        "tonalRamp": ["#000100", "#020700", "#071203", "#13260c", "#27441c", "#467036", "#73aa5c", "#aef691"]
+      },
+      "pedra": {
+        "role": "neutral",
+        "displayName": "Pedra",
+        "canonical": "oklch(87.5% 0.0409 83.1)",
+        "tonalRamp": ["#010100", "#070401", "#130d05", "#271d10", "#453822", "#715e3f", "#ac9269", "#f8d7a1"]
+      },
+      "areia": {
+        "role": "neutral",
+        "displayName": "Areia",
+        "canonical": "oklch(95.1% 0.0188 83.1)",
+        "tonalRamp": ["#010100", "#060503", "#100e0a", "#221e17", "#3f382e", "#685f50", "#9f9480", "#e8d9bf"]
+      },
+      "branco": {
+        "role": "neutral",
+        "displayName": "Branco da Serra",
+        "canonical": "oklch(97.0% 0.0070 88.6)",
+        "tonalRamp": ["#010101", "#050504", "#0e0e0c", "#201e1c", "#3b3935", "#62605a", "#98958d", "#dfdbd0"]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "oklch(30.8% 0.0552 246.7)",
+        "tonalRamp": ["#000103", "#01050c", "#060f1c", "#102136", "#233d5c", "#406590", "#6a9cd5", "#c2dffe"]
+      },
+      "tinta-fraca": {
+        "role": "neutral",
+        "displayName": "Tinta Fraca",
+        "canonical": "oklch(49.9% 0.0526 248.0)",
+        "tonalRamp": ["#000103", "#01050c", "#060f1c", "#112135", "#243c5b", "#42658e", "#6d9cd3", "#c2dffe"]
+      },
+      "cota-terra": {
+        "role": "neutral",
+        "displayName": "Cota Terra",
+        "canonical": "oklch(49.2% 0.0536 85.3)",
+        "tonalRamp": ["#010100", "#080400", "#140d03", "#291d0c", "#48371c", "#755d36", "#b1925c", "#fed793"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Apenas o nome \"Antonio Rodrigo\" no hero, sobre o céu do render." },
+      "headline": { "displayName": "Headline", "purpose": "A promessa do bloco \"sobre\"." },
+      "title": { "displayName": "Title", "purpose": "Cabeçalhos de faixa e nomes de obra no acervo." },
+      "body": { "displayName": "Body", "purpose": "Bio e parágrafos longos, máx. 62ch." },
+      "label": { "displayName": "Label / Mono", "purpose": "Cotas, fichas de prancha, legendas, contadores, links do nav e telefone dos CTAs. Sempre caixa alta, 0.12em de tracking." },
+      "micro-label": { "displayName": "Micro label", "purpose": "Nome da faixa dentro do carimbo de cota (components/Cota.tsx), 10px — abaixo do label para caber no trilho de 76px." },
+      "wordmark": { "displayName": "Wordmark", "purpose": "O nome no canto esquerdo da barra do topo (components/Nav.tsx), 15px." },
+      "body-compact": { "displayName": "Body compact", "purpose": "Descrição de serviço, um degrau abaixo do corpo da bio (app/page.tsx), 0.97rem." },
+      "card-title": { "displayName": "Card title", "purpose": "Nome da obra na ficha do acervo (app/page.tsx), 1.4rem." }
+    },
+    "elevation": {
+      "strategy": "flat-tonal",
+      "shadows": "none",
+      "note": "Sem box-shadow em nenhum ponto do código. Relevo por faixa tonal, régua de 1px e fundo sólido no carimbo de cota. Os únicos efeitos de superfície são backdrop-filter: blur(8px) no nav fora do céu e backdrop-blur-sm sobre bg-ceu-1/95 no lightbox."
+    },
+    "rules": {
+      "espessura": "1px (--rule)",
+      "regua": "border-top: 1px solid color-mix(in oklab, var(--color-tinta) 26%, transparent)",
+      "regua-clara": "border-top: 1px solid color-mix(in oklab, var(--color-branco) 30%, transparent)",
+      "borda-padrao": "color-mix(in oklab, var(--color-tinta) 18%, transparent)",
+      "borda-prancha": "1px solid color-mix(in oklab, var(--color-tinta) 22%, transparent)",
+      "foco": "outline: 2px solid var(--color-ceu-2); outline-offset: 3px",
+      "selecao": "background: var(--color-ceu-2); color: var(--color-branco)"
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "corte", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Curva única do sistema: óndinha e revelação." },
+      { "name": "onda", "value": "0.9s cubic-bezier(0.22, 1, 0.36, 1) both", "purpose": "Anel branco que se abre do centro ao hover/focus na prancha: de scale(0.25) opacidade 0 a scale(4.6) opacidade 0. Uma vez, nunca em loop." },
+      { "name": "onda-defasagem", "value": "0.14s", "purpose": "Atraso do segundo anel (::after) em relação ao primeiro (::before)." },
+      { "name": "onda-escurecimento", "value": "filter: brightness(0.93)", "purpose": "Garante contraste do anel branco sobre céu ou parede clara." },
+      { "name": "revelar", "value": "sobe 0.7s cubic-bezier(0.22, 1, 0.36, 1) both", "purpose": "Entrada orquestrada: opacidade 0 + translateY(14px) até o lugar." },
+      { "name": "revelar-rolagem", "value": "animation-timeline: view(); animation-range: entry 5% cover 34%", "purpose": "Revelação dirigida por scroll, apenas sob @supports (animation-timeline: view()) e sem prefers-reduced-motion." },
+      { "name": "transicao-imagem", "value": "filter 0.35s ease", "purpose": "Transição do filtro das pranchas." },
+      { "name": "transicao-nav", "value": "500ms", "purpose": "Troca de cor/borda do nav ao sair do céu." },
+      { "name": "lenis", "value": "duration 1.1 · wheelMultiplier 1 · touchMultiplier 1.5 · anchors.offset -76", "purpose": "Scroll suave; não inicializa quando prefers-reduced-motion é reduce." },
+      { "name": "reduzido", "value": "animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important", "purpose": "Zeramento global sob prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ],
+    "layout": {
+      "container": "max-w-[1600px]",
+      "gutter": { "mobile": "1.5rem (px-6)", "desktop": "4rem (lg:px-16)" },
+      "ritmo-faixa": { "mobile": "5rem (py-20)", "desktop": "7rem (lg:py-28)" },
+      "deslocamento-desktop": "lg:pl-[76px] — trilho de cota",
+      "respiro-movel": "pb-[78px] — barra fixa de CTA",
+      "camadas": { "cota": "z-30", "nav": "z-40", "cta-fixo": "z-40", "lightbox": "z-50" },
+      "faixas": [
+        { "id": "inicio", "fundo": "ceu-1 (render) + pedra" },
+        { "id": "cotas", "fundo": "ceu-2" },
+        { "id": "sobre", "fundo": "areia" },
+        { "id": "servicos", "fundo": "branco" },
+        { "id": "obras", "fundo": "pedra" },
+        { "id": "acervo", "fundo": "areia" },
+        { "id": "contato", "fundo": "serra" }
+      ]
+    }
+  },
+  "components": [
+    {
+      "name": "CTA WhatsApp",
+      "kind": "button",
+      "refersTo": "cta-whatsapp",
+      "description": "Bloco verde sólido do hero e do fim da página: a ação primária, sempre com o número sob o rótulo.",
+      "html": "<a class=\"ds-cta-whatsapp\" href=\"https://wa.me/558897374527\"><span class=\"ds-cta-rotulo\">Falar no WhatsApp</span><span class=\"ds-cta-mono\">(88) 99737-4527</span></a>",
+      "css": ".ds-cta-whatsapp { display: flex; flex-direction: column; justify-content: center; background: var(--color-serra); color: var(--color-branco); padding: 16px 24px; border-radius: 0; text-decoration: none; transition: background-color 150ms ease; } .ds-cta-whatsapp:hover, .ds-cta-whatsapp:focus-visible { background: var(--color-serra-claro); } .ds-cta-rotulo { font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; line-height: 1; } .ds-cta-mono { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.5rem; opacity: 0.9; } @media (min-width: 640px) { .ds-cta-whatsapp { padding: 20px 32px; } .ds-cta-rotulo { font-size: 1.25rem; } }"
+    },
+    {
+      "name": "CTA Ligar (contornado)",
+      "kind": "button",
+      "refersTo": "cta-ligar",
+      "description": "Variante secundária do hero: contorno de 1px na tinta, sem preenchimento, para quem prefere ligar.",
+      "html": "<a class=\"ds-cta-ligar\" href=\"tel:+558897374527\"><span class=\"ds-cta-rotulo\">Ligar</span><span class=\"ds-cta-mono\">atendimento direto</span></a>",
+      "css": ".ds-cta-ligar { display: flex; flex-direction: column; justify-content: center; border: 1px solid color-mix(in oklab, var(--color-tinta) 35%, transparent); color: var(--color-tinta); padding: 16px 24px; border-radius: 0; text-decoration: none; transition: border-color 150ms ease; } .ds-cta-ligar:hover, .ds-cta-ligar:focus-visible { border-color: var(--color-tinta); } .ds-cta-rotulo { font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; line-height: 1; } .ds-cta-mono { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.5rem; color: color-mix(in oklab, var(--color-tinta) 75%, transparent); }"
+    },
+    {
+      "name": "Prancha",
+      "kind": "card",
+      "refersTo": "prancha",
+      "description": "Imagem com ficha mono embaixo: a unidade de acervo do sistema. É um botão que abre o lightbox.",
+      "html": "<button class=\"ds-prancha\" type=\"button\"><img class=\"ds-prancha-img\" src=\"/obras/cena-03-1.webp\" alt=\"Fachada noturna\"><span class=\"ds-prancha-ficha\">cena-03-1 — Fachada noturna</span></button>",
+      "css": ".ds-prancha { display: block; width: 100%; background: var(--color-branco); border: 1px solid color-mix(in oklab, var(--color-tinta) 22%, transparent); border-radius: 0; padding: 0; text-align: left; cursor: zoom-in; } .ds-prancha-img { display: block; width: 100%; height: 100%; object-fit: cover; } .ds-prancha-ficha { display: block; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in oklab, var(--color-tinta) 72%, transparent); border-top: 1px solid color-mix(in oklab, var(--color-tinta) 15%, transparent); padding: 8px 10px; }"
+    },
+    {
+      "name": "Óndinha (afordância de ampliação)",
+      "kind": "custom",
+      "refersTo": "prancha",
+      "description": "Dois anéis brancos de 2px que se abrem do centro uma única vez no hover/focus; onde não há hover, quem sinaliza é o selo de quatro cantos.",
+      "html": "<button class=\"ds-onda\" type=\"button\"><img class=\"ds-onda-img\" src=\"/obras/cena-03-1.webp\" alt=\"Fachada noturna\"><span class=\"ds-onda-selo\" aria-hidden=\"true\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 10 10\" fill=\"none\"><path d=\"M1 3.6V1h2.6M6.4 1H9v2.6M9 6.4V9H6.4M3.6 9H1V6.4\" stroke=\"currentColor\" stroke-width=\"1.15\"/></svg></span></button>",
+      "css": ".ds-onda { position: relative; overflow: hidden; display: block; padding: 0; border: 1px solid color-mix(in oklab, var(--color-tinta) 22%, transparent); background: var(--color-branco); border-radius: 0; cursor: zoom-in; touch-action: manipulation; -webkit-tap-highlight-color: transparent; } .ds-onda-img { display: block; width: 100%; height: 100%; object-fit: cover; transition: filter 0.35s ease; } .ds-onda::before, .ds-onda::after { content: \"\"; position: absolute; top: 50%; left: 50%; width: 22%; aspect-ratio: 1; translate: -50% -50%; border: 2px solid rgba(247, 245, 240, 0.92); border-radius: 50%; opacity: 0; pointer-events: none; z-index: 2; } .ds-onda:hover::before, .ds-onda:focus-visible::before { animation: ds-onda 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; } .ds-onda:hover::after, .ds-onda:focus-visible::after { animation: ds-onda 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.14s both; } .ds-onda:hover .ds-onda-img { filter: brightness(0.93); } @keyframes ds-onda { 0% { opacity: 0; scale: 0.25; } 15% { opacity: 0.95; } 100% { opacity: 0; scale: 4.6; } } .ds-onda-selo { display: flex; position: absolute; top: 0; right: 0; align-items: center; border: 1px solid color-mix(in oklab, var(--color-tinta) 30%, transparent); background: var(--color-branco); color: var(--color-tinta); padding: 8px; pointer-events: none; } @media (hover: hover) { .ds-onda-selo { display: none; } } @media (prefers-reduced-motion: reduce) { .ds-onda:hover::before, .ds-onda:hover::after, .ds-onda:focus-visible::before, .ds-onda:focus-visible::after { animation: none; opacity: 0; } }"
+    },
+    {
+      "name": "Rótulo de cota",
+      "kind": "custom",
+      "refersTo": "rotulo-cota",
+      "description": "Filete de 2.5rem + número: abre cada faixa e ancora o sistema de altitudes.",
+      "html": "<p class=\"ds-cota\">cota 420,00 — pedra</p>",
+      "css": ".ds-cota { display: inline-flex; align-items: center; gap: 0.625rem; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in oklab, var(--color-tinta) 70%, transparent); } .ds-cota::before { content: \"\"; width: 2.5rem; height: 1px; background: currentColor; opacity: 0.55; }"
+    },
+    {
+      "name": "Régua",
+      "kind": "custom",
+      "refersTo": "prancha",
+      "description": "A separação do sistema: 1px em tinta a 26% (ou em branco a 30% sobre fundo escuro).",
+      "html": "<div class=\"ds-regua\"></div>",
+      "css": ".ds-regua { border-top: 1px solid color-mix(in oklab, var(--color-tinta) 26%, transparent); }"
+    },
+    {
+      "name": "Barra fixa de CTA (celular)",
+      "kind": "nav",
+      "refersTo": "cta-fixo-movel",
+      "description": "Barra verde presa no rodapé do celular: WhatsApp à esquerda, Ligar à direita, sempre a um toque.",
+      "html": "<div class=\"ds-barra\"><a class=\"ds-barra-whats\" href=\"https://wa.me/558897374527\"><span class=\"ds-barra-rotulo\">Falar no WhatsApp</span><span class=\"ds-barra-mono\">(88) 99737-4527</span></a><a class=\"ds-barra-ligar\" href=\"tel:+558897374527\">Ligar</a></div>",
+      "css": ".ds-barra { display: flex; align-items: stretch; background: var(--color-serra); color: var(--color-branco); border-top: 1px solid color-mix(in oklab, var(--color-branco) 20%, transparent); } .ds-barra-whats { display: flex; flex: 1; flex-direction: column; justify-content: center; padding: 12px 20px; color: inherit; text-decoration: none; } .ds-barra-rotulo { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 600; line-height: 1; } .ds-barra-mono { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.375rem; opacity: 0.85; } .ds-barra-ligar { display: flex; align-items: center; padding: 12px 20px; border-left: 1px solid color-mix(in oklab, var(--color-branco) 25%, transparent); font-family: var(--font-display); font-size: 1.0625rem; font-weight: 600; color: inherit; text-decoration: none; }"
+    },
+    {
+      "name": "Nav (sobre o céu / fora do céu)",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "Cabeçalho fixo que nasce transparente sobre o render e passa a vidro areia com blur depois que sai do céu.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-marca\" href=\"#inicio\">Antonio Rodrigo <span class=\"ds-nav-mono\">Arquiteto</span></a><nav class=\"ds-nav-links\"><a class=\"ds-nav-link\" href=\"#sobre\">Sobre</a><a class=\"ds-nav-link\" href=\"#servicos\">Serviços</a></nav><a class=\"ds-nav-cta\" href=\"https://wa.me/558897374527\">WhatsApp (88) 99737-4527</a></header>",
+      "css": ".ds-nav { position: fixed; inset: 0 0 auto 0; display: flex; align-items: center; gap: 1.5rem; padding: 16px 24px; background: color-mix(in oklab, var(--color-areia) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(22, 50, 74, 0.16); color: var(--color-tinta); transition: color 500ms ease, background-color 500ms ease, border-color 500ms ease; } .ds-nav-marca { font-family: var(--font-display); font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: inherit; text-decoration: none; } .ds-nav-mono, .ds-nav-link { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; } .ds-nav-mono { opacity: 0.7; } .ds-nav-links { margin-left: auto; display: flex; align-items: center; gap: 1.75rem; } .ds-nav-link { color: inherit; text-decoration: none; opacity: 0.85; transition: opacity 150ms ease; } .ds-nav-link:hover, .ds-nav-link:focus-visible { opacity: 1; } .ds-nav-cta { margin-left: 1.5rem; border: 1px solid currentColor; background: var(--color-serra); color: var(--color-branco); padding: 10px 14px; text-decoration: none; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Lightbox (barra superior)",
+      "kind": "custom",
+      "refersTo": "lightbox-barra",
+      "description": "Faixa do topo do diálogo de prancha ampliada: obra, contador tabular e o botão que fecha.",
+      "html": "<div class=\"ds-lightbox-topo\"><p class=\"ds-lightbox-mono\">Casa São José · Tianguá</p><p class=\"ds-lightbox-mono ds-lightbox-contador\">01 / 52</p><button class=\"ds-lightbox-fechar\" type=\"button\">esc · fechar</button></div>",
+      "css": ".ds-lightbox-topo { display: flex; align-items: center; gap: 0.75rem; padding: 12px 16px; background: color-mix(in oklab, var(--color-ceu-1) 95%, transparent); color: var(--color-branco); border-bottom: 1px solid color-mix(in oklab, var(--color-branco) 20%, transparent); } .ds-lightbox-mono { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.9; margin: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-lightbox-contador { flex: 0 0 auto; font-variant-numeric: tabular-nums; } .ds-lightbox-fechar { flex: 0 0 auto; border: 1px solid color-mix(in oklab, var(--color-branco) 40%, transparent); background: transparent; color: inherit; padding: 6px 12px; border-radius: 0; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: border-color 150ms ease; } .ds-lightbox-fechar:hover, .ds-lightbox-fechar:focus-visible { border-color: var(--color-branco); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Corte de Altitude",
+    "overview": "A página não é uma pilha de seções: é um corte vertical. O topo é céu (--color-ceu-1 #1e4a6e), o pé é chão (--color-serra #3f6239), e rolar é descer. Cada faixa horizontal recebe uma cor de altitude e é separada da próxima por uma régua de 1px (--rule: 1px), a mesma espessura do traço em qualquer lugar do sistema — borda de prancha, tick da régua de cota, sublinhado de ficha. O azul aparece em três degraus fixos e nunca em preto: não existe preto na paleta, o mais escuro é a tinta (#16324a).\n\nO sistema é plano por construção. Não há sombra difusa, não há canto arredondado, não há gradiente decorativo — só um véu de nav (from-ceu-1/80 to-transparent, h-44) sobre o hero para o cabeçalho poder ficar transparente. Profundidade é dada por sobreposição tonal (céu claro nos dados, pedra nos projetos, areia nos textos, verde no fim) e pelo carimbo de cota que carrega o próprio fundo sólido para garantir contraste sobre qualquer faixa.\n\nO acabamento é de prancha técnica: cada imagem é uma prancha (fundo branco, borda 1px) com ficha mono embaixo, cada título carrega o rótulo de cota acima (cota 420,00 — pedra), cada dado do studio é uma coluna com filete à esquerda. A única geometria não retangular do sistema é o anel da onda de hover — um círculo de 2px que se abre do centro uma vez e desaparece.",
+    "keyCharacteristics": [
+      "Faixas tonais planas separadas por réguas de 1px, do céu ao chão.",
+      "Zero raio de canto e zero sombra em todo o sistema (o único círculo é o anel da onda).",
+      "Três vozes de tipo com papéis fixos: Bricolage Grotesque em títulos, Archivo no texto, Spline Sans Mono em cotas, fichas e legendas.",
+      "Verde (#3f6239) usado uma vez, como preenchimento da faixa final e dos CTAs.",
+      "O carimbo de cota desce pela margem esquerda de 900 m a 0 m, trocando de cor a cada faixa."
+    ],
+    "rules": [
+      { "name": "A Regra do Sem-Preto", "body": "Não existe preto no sistema. O escuro mais fundo é tinta #16324a; sobre faixas azuis ou verdes o texto é sempre branco #f7f5f0, nunca branco puro.", "section": "colors" },
+      { "name": "A Regra do Verde Único", "body": "O verde aparece uma vez por tela como preenchimento de CTA ou da faixa final. Ele não é usado como texto sobre fundo bege/quente nem como decoração.", "section": "colors" },
+      { "name": "A Regra da Voz de Instrumento", "body": "Tudo que é dado — cota, contador, ficha, endereço, horário — é mono, caixa alta e 0.12em de tracking. Nada de dado em Archivo.", "section": "typography" },
+      { "name": "A Regra do Tracking Negativo", "body": "Só Bricolage Grotesque recebe tracking negativo (-0.01em a -0.035em), e o valor acompanha o tamanho: quanto maior o tipo, mais fechado.", "section": "typography" },
+      { "name": "A Regra do Plano", "body": "Nada flutua. Se um elemento precisa se destacar de fundo, ele ganha borda de 1px ou fundo sólido — nunca sombra, nunca blur decorativo.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar `--rule: 1px` (`app/globals.css`) para toda separação — réguas, bordas de prancha, ticks de cota. Espessura é sempre 1px.",
+      "Do manter `rounded.none` (`0px`) em qualquer superfície nova; o único `50%` do sistema é o anel da onda.",
+      "Do manter o verde como preenchimento com texto branco por cima, no máximo uma vez por tela.",
+      "Do escrever todo dado — cota, contador, ficha, horário, telefone — em `.mono` (0.75rem, 0.12em, caixa alta).",
+      "Do repetir o par `<div className=\"regua\" />` + `<p className=\"cota\">` para abrir qualquer faixa nova.",
+      "Do desligar movimento em `prefers-reduced-motion`: o sistema já zera a animação globalmente e o Lenis nem inicializa nesse caso."
+    ],
+    "donts": [
+      "Don't introduzir `box-shadow` ou `shadow-*`. O sistema é plano; relevo se resolve com borda 1px ou fundo sólido.",
+      "Don't usar `#000` nem `#fff`. O fundo do documento é `#f7f5f0` e o escuro mais fundo é `#16324a`.",
+      "Don't aplicar `border-radius` em botão, card ou ficha.",
+      "Don't usar `--color-serra` como cor de texto sobre pedra ou areia (o verde só aparece como fundo de CTA/faixa, com branco por cima).",
+      "Don't adicionar uma segunda hue de acento; a paleta é azul + bege + branco, com o verde como único acento.",
+      "Don't disparar a óndinha em loop, em autoplay ou fora de `:hover` / `:focus-visible` — e nunca em telas sem hover, onde quem sinaliza é o selo `.marca-zoom`."
+    ]
+  }
+}

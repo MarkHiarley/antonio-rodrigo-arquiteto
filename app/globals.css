@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Serra ao Entardecer — sistema de altitudes
+   A página é um corte vertical: o topo é céu, o pé é chão.
+   --------------------------------------------------------------- */
+
+@theme {
+  /* Azul de hora azul, três degraus. Nunca preto. */
+  --color-ceu-1: #1e4a6e;
+  --color-ceu-2: #2e6f9e;
+  --color-ceu-3: #5c93bc;
+  --color-neblina: #b9cfe0;
+
+  /* Pedra, areia, branco: o chão da serra. */
+  --color-pedra: #e3d4b8;
+  --color-areia: #f5eee1;
+  --color-branco: #f7f5f0;
+
+  /* Verde serra, uma vez só, no fim da descida. */
+  --color-serra: #3f6239;
+  --color-serra-claro: #6f8f5f;
+
+  --color-tinta: #16324a;
+  --color-tinta-fraca: #4b6680;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-spline), ui-monospace, monospace;
+
+  --rule: 1px;
+}
+
+@layer base {
+  * {
+    border-color: color-mix(in oklab, var(--color-tinta) 18%, transparent);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-branco);
+    color: var(--color-tinta);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-ceu-2);
+    color: var(--color-branco);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ceu-2);
+    outline-offset: 3px;
+  }
+}
+
+/* Lenis: a página controla o scroll, o documento não rola sozinho. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Lightbox aberto: a página não rola por baixo. */
+html.lightbox-aberto,
+html.lightbox-aberto body {
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------------
+   Réguas e cotas — a linguagem de desenho do corte
+   --------------------------------------------------------------- */
+
+.regua {
+  border-top: var(--rule) solid color-mix(in oklab, var(--color-tinta) 26%, transparent);
+}
+
+.regua-clara {
+  border-top: var(--rule) solid color-mix(in oklab, var(--color-branco) 30%, transparent);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Rótulo de cota: linha, tick e número */
+.cota {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cota::before {
+  content: "";
+  width: 2.5rem;
+  height: var(--rule);
+  background: currentColor;
+  opacity: 0.55;
+}
+
+/* ---------------------------------------------------------------
+   Prancha: uma imagem com ficha embaixo à esquerda
+   --------------------------------------------------------------- */
+
+.prancha {
+  display: block;
+  background: var(--color-branco);
+  border: var(--rule) solid color-mix(in oklab, var(--color-tinta) 22%, transparent);
+}
+
+.prancha img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.35s ease;
+}
+
+/* Ondinha: no hover, um anel branco se abre a partir do centro — uma vez,
+   nunca em loop. O leve escurecimento garante que ele apareça mesmo sobre
+   céu ou parede branca. */
+.prancha-onda {
+  position: relative;
+  overflow: hidden;
+  /* Sem atraso de 300ms no toque e sem o scroll suave engolir o tap. */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.prancha-onda::before,
+.prancha-onda::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border: 2px solid rgba(247, 245, 240, 0.92);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.prancha-onda:hover::before,
+.prancha-onda:focus-visible::before {
+  animation: onda 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.prancha-onda:hover::after,
+.prancha-onda:focus-visible::after {
+  animation: onda 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.14s both;
+}
+
+.prancha-onda:hover img {
+  filter: brightness(0.93);
+}
+
+@keyframes onda {
+  0% {
+    opacity: 0;
+    scale: 0.25;
+  }
+  15% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    scale: 4.6;
+  }
+}
+
+/* Onde não existe hover, a onda nunca dispara: fica um ícone mudo no canto. */
+.marca-zoom {
+  display: flex;
+}
+@media (hover: hover) {
+  .marca-zoom {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prancha-onda:hover::before,
+  .prancha-onda:hover::after,
+  .prancha-onda:focus-visible::before,
+  .prancha-onda:focus-visible::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Movimento — uma vez, orquestrado, nunca espalhado
+   --------------------------------------------------------------- */
+
+@keyframes sobe {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes linha-corre {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.revelar {
+  animation: sobe 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Sem JS ou sem suporte: tudo visível por padrão. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .revelar-rolagem {
+      animation: sobe linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 34%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

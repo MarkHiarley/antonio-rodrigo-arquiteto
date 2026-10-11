@@ -1,0 +1,118 @@
+LICENSE — SITE ANTONIO RODRIGO | ARQUITETO
+==========================================
+
+Copyright (c) 2026 MarkHiarley <hiarleycostamarley@gmail.com>
+All rights reserved.
+
+This file governs the use of the source code, structure, layout, styles,
+components, copy and scripts of this website (app/, components/, lib/,
+public/, next.config.ts, package.json and every other file in this repository
+— hereinafter "the Software").
+
+The Software is NOT free software. No permission is granted beyond what is
+expressly described below.
+
+
+1. PERMITTED USE WITHOUT AUTHORIZATION
+--------------------------------------
+
+The following is permitted without prior authorization:
+
+  a) reading, studying and running the Software locally for personal,
+     academic or evaluation purposes;
+
+  b) modifying the Software for strictly NON-commercial personal use.
+
+The permission above does NOT authorize publishing, deploying or commercially
+exploiting the Software in any way.
+
+
+2. COMMERCIAL USE REQUIRES PERMISSION
+-------------------------------------
+
+Any commercial use of the Software requires prior, express written
+authorization from the copyright holder. "Commercial use" includes, but is
+not limited to:
+
+  a) publishing, hosting or making the Software (or a modified version)
+     available on a website, landing page, application or service accessible
+     to third parties for commercial or institutional purposes, or for
+     customer acquisition;
+
+  b) using the Software, in whole or in part, as a product, service, template,
+     theme or component that is sold, resold, licensed or distributed to third
+     parties;
+
+  c) integrating the Software into a client, agency, freelance or any other
+     paid services project;
+
+  d) using the styles, layout, components or scripts as the basis for another
+     commercial project.
+
+To request permission, send a written request describing the intended use to:
+hiarleycostamarley@gmail.com. Authorization is only valid when expressly
+granted by the copyright holder, and may be conditioned on compensation,
+attribution or scope limits.
+
+
+3. RESTRICTIONS
+---------------
+
+Without written authorization, you may not:
+
+  a) redistribute, sublicense, sell, rent or otherwise transfer the Software;
+
+  b) remove, obscure or alter this license file, the copyright notices or the
+     authorship credits;
+
+  c) claim authorship of the Software or any part of it.
+
+
+4. THIRD-PARTY CONTENT
+----------------------
+
+The "Antonio Rodrigo | ARQUITETO" brand, the name and the signature
+"Antonio R. Duarte", the architectural renders under public/obras/ and
+ref/images/, the portrait photograph, the studio data (address, telephone,
+opening hours, Instagram handle) and the institutional copy belong to
+Antonio Rodrigo Duarte and are NOT covered by the permission described in
+Section 1. Those images are the architect's own work, taken from his own
+archive; no rights over such content are granted by this file.
+
+Likewise, the typefaces used by the site (Bricolage Grotesque, Archivo and
+Spline Sans Mono) are licensed to their respective authors under the SIL Open
+Font License, and nothing in this file modifies those terms.
+
+
+5. NO WARRANTY
+--------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+
+
+6. GOVERNING LAW
+----------------
+
+This license is governed by the laws of the Federative Republic of Brazil.
+
+
+7. EFFECTIVE DATE AND PRIOR USE
+-------------------------------
+
+This license takes effect on 2026-10-11, the date it was first committed to
+this repository (the initial commit). It is a grant of limited permissions
+that applies going forward only.
+
+No permission, license or authorization of any kind — express or implied — was
+ever granted for any use of the Software before that date. The copyright
+holder expressly reserves all rights, claims and remedies in respect of any
+use made before that date.
+
+Nothing in this file may be construed as a waiver, ratification, novation or
+retroactive authorization of any prior use, including any use made while the
+Software was publicly accessible without a license file.

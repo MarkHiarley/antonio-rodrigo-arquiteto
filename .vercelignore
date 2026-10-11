@@ -1,0 +1,19 @@
+# Originais baixados do site antigo: 117 MB que nao fazem parte do build.
+# As versoes de producao vivem em public/obras/.
+ref/
+
+# Artefatos de trabalho do design, nao vao para producao.
+.impeccable/
+
+# Build e dependencias.
+.next/
+node_modules/
+.vercel/
+
+# Ambiente.
+.env
+.env.local
+
+# Sistema operacional / editor.
+.DS_Store
+*.log
