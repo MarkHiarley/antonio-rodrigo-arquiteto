@@ -33,7 +33,6 @@ export default function Home() {
             prioridade
             className="absolute inset-0 h-full w-full object-cover object-[50%_72%]"
           />
-          <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-ceu-1/80 to-transparent" />
 
           <div className="relative z-10 mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 pb-5 lg:px-16 lg:pb-6">
             <p className="mono text-branco/75">

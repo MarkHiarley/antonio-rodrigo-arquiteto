@@ -43,9 +43,8 @@ export default function Nav() {
     <header
       className="fixed inset-x-0 top-0 z-40 transition-colors duration-500"
       style={{
-        background: sobreCeu ? "transparent" : "color-mix(in oklab, #f5eee1 92%, transparent)",
+        background: sobreCeu ? "transparent" : "#f5eee1",
         borderBottom: sobreCeu ? "1px solid transparent" : "1px solid rgba(22,50,74,0.16)",
-        backdropFilter: sobreCeu ? "none" : "blur(8px)",
         color: sobreCeu ? "#f7f5f0" : "#16324a",
       }}
     >
