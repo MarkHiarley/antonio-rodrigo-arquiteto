@@ -30,13 +30,19 @@ const DESCRICAO =
   "Arquiteto Antonio Rodrigo, em Tianguá – CE. Projetos residenciais, comerciais e corporativos, reformas, design de interiores e acompanhamento de obra.";
 
 /**
- * A base das URLs absolutas (Open Graph). Sem domínio próprio ainda: usa o que
- * a Vercel expõe no deploy, ou NEXT_PUBLIC_SITE_URL quando o domínio existir.
- * Sem nenhum dos dois a chave fica de fora — nunca um domínio inventado.
+ * A base das URLs absolutas (Open Graph). Sem domínio próprio ainda, então:
+ * NEXT_PUBLIC_SITE_URL quando o domínio existir, senão o domínio de produção
+ * estável da Vercel, e só em último caso a URL deste deployment específico —
+ * que muda a cada deploy e derrubaria a imagem do preview já em cache. Sem
+ * nenhuma delas a chave fica de fora: nunca um domínio inventado.
  */
 const urlBase =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined);
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : undefined);
 
 export const metadata: Metadata = {
   ...(urlBase ? { metadataBase: new URL(urlBase) } : {}),
@@ -58,7 +64,21 @@ export const metadata: Metadata = {
     title: "Antonio Rodrigo | Arquiteto em Tianguá – CE",
     description: DESCRICAO,
     siteName: "Antonio Rodrigo | ARQUITETO",
-    images: [{ url: "/obras/cena-03-1.webp", width: 1600, height: 1280, alt: "Fachada noturna da Casa São José, em Tianguá" }],
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "Antonio Rodrigo, arquiteto, em obra em Tianguá",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Antonio Rodrigo | Arquiteto em Tianguá – CE",
+    description: DESCRICAO,
+    images: ["/og.jpg"],
   },
   robots: { index: true, follow: true },
 };
